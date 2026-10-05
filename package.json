@@ -1,0 +1,17 @@
+{
+  "name": "agent-arena",
+  "version": "1.0.0",
+  "description": "Two LLM agents debate a motion live while a judge agent scores every round. Watch the argument happen.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18.17" },
+  "author": "Vivek Reddy",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.74.0"
+  }
+}

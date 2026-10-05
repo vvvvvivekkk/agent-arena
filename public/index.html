@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14102a">
+  <title>Agent Arena — watch AI agents argue, live</title>
+  <meta name="description" content="Two LLM agents debate a motion in real time while a judge agent scores every round. Pick a topic, let them fight.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314102a'/%3E%3Ctext x='8' y='46' font-size='36'%3E⚔%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="brand">⚔ <b>AGENT ARENA</b></div>
+    <div class="status"><span class="mode-badge" id="modeBadge">—</span><span class="live-dot" id="liveDot">● STANDBY</span></div>
+  </header>
+
+  <section class="motion-bar">
+    <label class="motion-label" for="topic">MOTION</label>
+    <input id="topic" type="text" maxlength="140" value="AI tutors will beat video lectures."
+           placeholder="Type a motion for the agents to fight over…">
+    <select id="rounds" aria-label="Rounds">
+      <option value="2">2 rounds</option>
+      <option value="3" selected>3 rounds</option>
+      <option value="4">4 rounds</option>
+    </select>
+    <button id="start" class="start-btn">FIGHT <span>⚡</span></button>
+  </section>
+  <div class="presets" id="presets">
+    <button data-topic="AI tutors will beat video lectures.">AI tutors vs lectures</button>
+    <button data-topic="AI should be allowed for homework.">AI for homework</button>
+    <button data-topic="Every school student should learn to build with AI.">Kids should build with AI</button>
+  </div>
+
+  <main class="arena">
+    <aside class="pod pod-pro" id="podPro">
+      <div class="avatar"><i class="ring"></i><span>🔵</span></div>
+      <h2>AGENT A</h2>
+      <div class="side-tag">ARGUES PRO</div>
+      <div class="pod-status" id="statusPro">waiting for a motion</div>
+    </aside>
+
+    <section class="stage">
+      <div class="round-pips" id="roundPips" aria-label="Rounds"></div>
+      <div class="feed" id="feed">
+        <div class="feed-empty" id="feedEmpty">
+          <p>Two agents. One motion. A judge keeping score.</p>
+          <p class="hint">Pick a motion above and hit <b>FIGHT</b>.</p>
+        </div>
+      </div>
+      <div class="judge-panel">
+        <div class="judge-top">
+          <span>PRO <b id="scorePro">50</b></span>
+          <span class="judge-name" id="judgeName">⚖ JUDGE</span>
+          <span><b id="scoreCon">50</b> CON</span>
+        </div>
+        <div class="score-track"><i id="scoreFill"></i><em id="scoreMark"></em></div>
+        <div class="judge-rationale" id="rationale">The judge is seated. Scores update after every round.</div>
+      </div>
+    </section>
+
+    <aside class="pod pod-con" id="podCon">
+      <div class="avatar"><i class="ring"></i><span>🟡</span></div>
+      <h2>AGENT B</h2>
+      <div class="side-tag">ARGUES CON</div>
+      <div class="pod-status" id="statusCon">waiting for a motion</div>
+    </aside>
+  </main>
+
+  <div class="verdict-overlay" id="verdictOverlay" hidden>
+    <div class="verdict-card">
+      <span class="verdict-eyebrow">THE JUDGE HAS DECIDED</span>
+      <h3 id="verdictTitle">PRO WINS</h3>
+      <div class="verdict-score" id="verdictScore">62 — 38</div>
+      <p id="verdictRationale"></p>
+      <button id="rematch" class="start-btn">REMATCH <span>⚔</span></button>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>Debaters & judge run on the Claude API · replay demo when no key is set</span>
+    <a href="https://github.com/vvvvvivekkk/agent-arena" target="_blank" rel="noopener">github.com/vvvvvivekkk/agent-arena</a>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
