@@ -8,6 +8,12 @@ Pick a motion ("AI tutors will beat video lectures"), hit **FIGHT**, and Agent A
 
 An experiment in **adversarial multi-agent reasoning**: a good argument beats a single answer, because the disagreement surfaces weak claims, hidden assumptions, and the evidence that actually holds up.
 
+| Turns stream in live, token by token | The judge re-scores after every round |
+|:---:|:---:|
+| ![Agents arguing with a typing caret](media/typing.gif) | ![Judge scorebar sliding to 60–40](media/judge.gif) |
+
+<p align="center"><img src="media/verdict.gif" alt="Verdict stamp: PRO WINS 62–38" width="420"></p>
+
 ## How it works
 
 ```
