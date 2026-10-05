@@ -2,6 +2,8 @@
 
 **Two LLM agents argue a motion in real time. A judge agent scores every round. You watch it happen, token by token.**
 
+![Agent Arena — two agents debating live while the judge scores](media/demo.gif)
+
 Pick a motion ("AI tutors will beat video lectures"), hit **FIGHT**, and Agent A (PRO) and Agent B (CON) debate it live — each turn streams into the arena as it's generated, each agent visibly *thinking → speaking → listening*, while an LLM judge updates a PRO/CON scorebar after every round and hands down a final verdict.
 
 An experiment in **adversarial multi-agent reasoning**: a good argument beats a single answer, because the disagreement surfaces weak claims, hidden assumptions, and the evidence that actually holds up.
